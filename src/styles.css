@@ -1,5 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+body {
+  background: #f3f3f3;
+}
+.nav-bar {
+  @apply text-center group-hover:text-[#00ccaa] uppercase inline-block;
+}
+.menu-item {
+  @apply text-black pl-5 pt-5;
+}
+.menu-item-title {
+  @apply font-bold text-base pb-4;
+}
+.menu-item-info li a {
+  @apply hover:text-[#002c25] hover:text-base hover:font-bold duration-200;
+}
+.apple-product-item-img {
+  @apply overflow-hidden;
+}
+.apple-product-item-img img {
+  @apply group-hover:scale-105 group-hover:duration-500;
+}
+.slider-banner .owl-nav button,
+.trademark-slider .owl-nav button {
+  background: #fff !important;
+  height: 44px;
+  position: absolute;
+  width: 44px;
+  opacity: 0.7;
+  border-radius: 100% !important;
+  border: #e1e1e1;
+  left: -27px;
+  filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
+  top: 0;
+  transform: translateY(0);
+}
+.owl-prev:hover {
+  opacity: 1;
+}
+.owl-nav button span {
+  display: block;
+}
+.slider-banner .owl-nav button.owl-next,
+.trademark-slider .owl-nav button.owl-next {
+  right: 0px;
+  left: unset;
+}
+.slider-banner .owl-nav,
+.trademark-slider .owl-nav {
+  position: absolute;
+  top: 24%;
+  width: calc(100% - 100px);
+}
