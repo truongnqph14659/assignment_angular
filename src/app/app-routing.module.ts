@@ -8,6 +8,9 @@ import { ClientComponent } from './components/client/client.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchpageComponent } from './components/client/searchpage/searchpage.component';
+import { HomeAdminComponent } from './components/admin/home-admin/home-admin.component';
+import { ProductComponent } from './components/admin/product/product.component';
+import { ProductListComponent } from './components/admin/product-list/product-list.component';
 const routes: Routes = [
   {'path':'',component:ClientComponent,children:[
     {'path':'',component:HomepageComponent},
@@ -20,8 +23,16 @@ const routes: Routes = [
     //   'path':'brandname/:id',component:SearchpageComponent
     // }]}
   ]},
-  {'path':'admin',component:AdminComponent}
+  {'path':'admin',component:AdminComponent, children:[
+    {path:"",component:HomeAdminComponent},
+    {path:"product",component:ProductComponent, children:[
+      {
+        path:"", component:ProductListComponent
+      }
+    ]}
+  ]}
 ];
+// haha
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

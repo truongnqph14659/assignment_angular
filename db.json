@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product A",
+      "price": 200000,
+      "image": "https://zda.vn/wp-content/uploads/2020/12/dien-thoai-chup-anh-dep-11.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Product B",
+      "price": 200000,
+      "image": "https://zda.vn/wp-content/uploads/2020/12/dien-thoai-chup-anh-dep-11.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Product C",
+      "price": 200000,
+      "image": "https://zda.vn/wp-content/uploads/2020/12/dien-thoai-chup-anh-dep-11.jpg"
+    }
+  ]
+}

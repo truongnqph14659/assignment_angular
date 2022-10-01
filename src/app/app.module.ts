@@ -17,6 +17,11 @@ import { SearchpageComponent } from './components/client/searchpage/searchpage.c
 import { SubnavComponent } from './components/client/subnav/subnav.component';
 import { SigninComponent } from './components/client/signin/signin.component';
 import { SignupComponent } from './components/client/signup/signup.component';
+import { HomeAdminComponent } from './components/admin/home-admin/home-admin.component';
+import { ProductComponent } from './components/admin/product/product.component';
+import { ProductListComponent } from './components/admin/product-list/product-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,11 +40,16 @@ import { SignupComponent } from './components/client/signup/signup.component';
     SearchpageComponent,
     SubnavComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    HomeAdminComponent,
+    ProductComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
