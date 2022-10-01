@@ -1,0 +1,37 @@
+#name,
+#price,
+#img,
+#formAddProduct select,
+#formEditProduct select {
+  @apply block border border-black pl-3 my-2 w-2/4 rounded-sm h-10;
+}
+#formAddProduct button,
+#formEditProduct button {
+  @apply bg-black text-white w-32 h-10 border-4 border-gray-600 hover:border-black hover:bg-gray-600 transition-all;
+}
+#formAddProduct-img,
+#formEditProduct-img {
+  @apply flex border-none py-5;
+}
+#formAddProduct-img input,
+#formEditProduct-img input {
+  @apply border-none;
+}
+#productHot {
+  @apply w-5 mr-5 my-5 h-5;
+}
+#checkName,
+#checkPrice,
+#checkImg {
+  @apply text-red-600 text-sm;
+}
+.cart {
+  @apply w-[1200px]  mx-auto bg-white text-center rounded-md px-5;
+}
+.cart th,
+td {
+  @apply border-b border-black py-4;
+}
+.cart tfoot td {
+  @apply border-none text-center;
+}

@@ -12,6 +12,11 @@ import { NavbarComponent } from './components/client/navbar/navbar.component';
 import { ProducthomeComponent } from './components/client/producthome/producthome.component';
 import { HomeheaderComponent } from './components/client/homeheader/homeheader.component';
 import { SlideshowComponent } from './components/client/slideshow/slideshow.component';
+import { HomepageComponent } from './components/client/homepage/homepage.component';
+import { SearchpageComponent } from './components/client/searchpage/searchpage.component';
+import { SubnavComponent } from './components/client/subnav/subnav.component';
+import { SigninComponent } from './components/client/signin/signin.component';
+import { SignupComponent } from './components/client/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { SlideshowComponent } from './components/client/slideshow/slideshow.comp
     NavbarComponent,
     ProducthomeComponent,
     HomeheaderComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    HomepageComponent,
+    SearchpageComponent,
+    SubnavComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
