@@ -1,3 +1,5 @@
+import { productModel } from './../model/product';
+import { HttpserviceService } from './../services/httpservice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./producthome.component.css']
 })
 export class ProducthomeComponent implements OnInit {
-
-  constructor() { }
+  dataPruducts:productModel[]=[]
+  constructor(private httpRequest:HttpserviceService) { }
 
   ngOnInit(): void {
+    this.httpRequest.getProdducts().subscribe(data=>{
+      this.dataPruducts = data
+    })
+
   }
 
 }

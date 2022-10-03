@@ -14,8 +14,8 @@ import { ProductListComponent } from './components/admin/product-list/product-li
 const routes: Routes = [
   {'path':'',component:ClientComponent,children:[
     {'path':'',component:HomepageComponent},
-    {'path':'brandname/:id',component:SearchpageComponent},
-    {'path':'detail/:id',component:DetailpageComponent},
+    {'path':':brandname/:id',component:SearchpageComponent},
+    {'path':'product/:id/detail',component:DetailpageComponent},
     {'path':'signin',component:SigninComponent},
     {'path':'signup',component:SignupComponent}
     // nếu mà phần link selector ko giống theo đường dẫn các cấp như children thì nó vẫn ra linh link gốc cha của nó vidu: detail/1

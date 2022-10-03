@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
   constructor(private routes:ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.routes.paramMap.subscribe((params)=>{
-    //   console.log(params);
-    //  })
+    window.addEventListener('popstate', function (e) {
+      var state = e.state;
+      console.log(state);
+      if (state !== null) {
+          window.location.reload()
+      }
+  });
   }
+ 
 
 }

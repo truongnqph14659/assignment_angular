@@ -2,31 +2,30 @@
 <!-- giao dien chi tiết sản phẩm -->
 <div class="detail w-[1200px] mx-auto mt-5 bg-white rounded-lg px-5 pt-5 pb-10">
     <div class="border-b pb-4 font-bold text-2xl">
-        <p>san pham a</p>
+        <p>{{dataProduct.name}}</p>
     </div>
     <div class="grid grid-cols-2 gap-5 pt-5">
         <div>
-            <img class="w-[500px] mx-auto"
-                src="https://vuongquocanh.com/wp-content/uploads/2018/05/london-eye-800x534.jpg" alt="">
+            <img class="w-[500px] mx-auto" src="{{dataProduct.img}}" alt="">
         </div>
         <div>
             <div class="price font-bold text-red-600 text-3xl">
-                10000 <u>đ</u>
+                {{dataProduct.price}} <u>đ</u>
             </div>
             <div class="flex pt-4">
                 <label
                     class="w-full text-center bg-[#f8f9fa] rounded-sm shadow-lg border border-white hover:bg-[#edeeef]">
-                    <input type="radio" value="128gb" name="dungLuong" class="w-[15px]" checked><span>128GB</span>
+                    <input type="radio" value="128gb" class="w-[15px]" checked><span>128GB</span>
                     <p>27.000.000 <u>đ</u></p>
                 </label>
                 <label
                     class="rounded-sm w-full text-center bg-[#f8f9fa] shadow-lg border border-white hover:bg-[#edeeef]">
-                    <input type="radio" value="128gb" name="dungLuong" class="w-[15px]"> <span>128GB</span>
+                    <input type="radio" value="128gb" class="w-[15px]"> <span>128GB</span>
                     <p>27.000.000 <u>đ</u></p>
                 </label>
                 <label
                     class="rounded-sm w-full text-center bg-[#f8f9fa] shadow-lg border border-white hover:bg-[#edeeef]">
-                    <input type="radio" value="128gb" name="dungLuong" class="w-[15px]"> <span>128GB</span>
+                    <input type="radio" value="128gb" class="w-[15px]"> <span>128GB</span>
                     <p>27.000.000 <u>đ</u></p>
                 </label>
             </div>
@@ -66,7 +65,7 @@
         </div>
     </div>
     <div class="border-t border-[#ccc] mt-5">
-        <div class="font-bold text-xl pt-5">Bình luận về san pham a</div>
+        <div class="font-bold text-xl pt-5">Bình luận về san pham {{dataProduct.name}}</div>
         <form class="flex relative">
             <textarea class="border border-[#ccc] rounded-sm w-full mt-5 h-20 pl-2 pr-40"
                 placeholder="Nhập bình luận của bạn..." name="" id=""></textarea>
