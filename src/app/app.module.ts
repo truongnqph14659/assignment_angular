@@ -21,7 +21,11 @@ import { HomeAdminComponent } from './components/admin/home-admin/home-admin.com
 import { ProductComponent } from './components/admin/product/product.component';
 import { ProductListComponent } from './components/admin/product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductAddComponent } from './components/admin/product-add/product-add.component'
+import { ProductEditComponent } from './components/admin/product-edit/product-edit.component';
+import { CategoryListComponent } from './components/admin/category-list/category-list.component';
+import { CategoryComponent } from './components/admin/category/category.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +47,18 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     HomeAdminComponent,
     ProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductAddComponent,
+    ProductEditComponent,
+    CategoryListComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
