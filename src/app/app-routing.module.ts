@@ -1,3 +1,4 @@
+import { ProductEditComponent } from './components/admin/product-edit/product-edit.component';
 import { SignupComponent } from './components/client/signup/signup.component';
 import { SigninComponent } from './components/client/signin/signin.component';
 import { DetailpageComponent } from './components/client/detailpage/detailpage.component';
@@ -11,6 +12,9 @@ import { SearchpageComponent } from './components/client/searchpage/searchpage.c
 import { HomeAdminComponent } from './components/admin/home-admin/home-admin.component';
 import { ProductComponent } from './components/admin/product/product.component';
 import { ProductListComponent } from './components/admin/product-list/product-list.component';
+import { ProductAddComponent } from './components/admin/product-add/product-add.component'
+import { CategoryListComponent } from './components/admin/category-list/category-list.component';
+import { CategoryComponent } from './components/admin/category/category.component';
 const routes: Routes = [
   {'path':'',component:ClientComponent,children:[
     {'path':'',component:HomepageComponent},
@@ -25,11 +29,22 @@ const routes: Routes = [
   ]},
   {'path':'admin',component:AdminComponent, children:[
     {path:"",component:HomeAdminComponent},
-    {path:"product",component:ProductComponent, children:[
+    {path:"home/product",component:ProductComponent, children:[
       {
         path:"", component:ProductListComponent
+      },
+      {
+        path:"add", component:ProductAddComponent
+      },
+      {
+        path:"edit/:id", component:ProductEditComponent
       }
-    ]}
+    ]},
+    {path:"home/category",component:CategoryComponent, children:[
+      {
+        path:"", component:CategoryListComponent
+      }
+    ]},
   ]}
 ];
 // haha
