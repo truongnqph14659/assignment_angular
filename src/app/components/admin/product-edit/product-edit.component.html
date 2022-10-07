@@ -37,17 +37,12 @@
                         </div>
                     </div>
 
-                    <!-- <div class="w-[48%] mt-4">
-                    <label for="">Danh mục:</label>
-                    <select id="category" class="form-select" aria-label="Default select example">
-                    ${
-                        category.map((item:any) =>{
-                            return /*html*/`
-                            <option value="${item.id}">${item.name}</option>
-                            `
-                        })
-                    }
-                </select> -->
+                    <div class="w-[48%] mt-4">
+                        <label for="">Danh mục:</label>
+                        <select name="productCateId" [(ngModel)]="product.productCateId" class="form-select" aria-label="Default select example">
+                                <option  *ngFor="let item of categories" value="{{item.id}}">{{item.cateName}}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="text-center mt-20">

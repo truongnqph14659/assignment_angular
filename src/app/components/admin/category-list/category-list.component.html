@@ -15,10 +15,10 @@
 </style>
 
 <div class="p-3 mb-2 bg-primary text-white ">
-    <p class="h3 text-center">Danh sách sản phẩm</p>
+    <p class="h3 text-center">Danh mục sản phẩm</p>
 </div>
 <div>
-    <button routerLink="add" class="btn btn-danger bg-red-600	">CREATE PRODUCT</button>
+    <button routerLink="categoryAdd" class="btn btn-danger bg-red-600	">CREATE PRODUCT</button>
 </div>
 <table class="table table-hover  ">
     <thead>
@@ -37,7 +37,6 @@
             <td class="text-center">{{item.cateType}}</td>
             <td class="text-center">
                 <button (click)="RemoveCategory(item.id)" class="btn btn-success">DELETE</button>
-                <button routerLink="edit/{{ item.id }}" class=" btn btn-danger bg-red-600 ">UPDATE</button>
             </td>
         </tr>
 

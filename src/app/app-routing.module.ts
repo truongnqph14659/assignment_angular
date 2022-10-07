@@ -1,3 +1,4 @@
+import { CategoryAddComponent } from './components/admin/category-add/category-add.component';
 import { ProductEditComponent } from './components/admin/product-edit/product-edit.component';
 import { SignupComponent } from './components/client/signup/signup.component';
 import { SigninComponent } from './components/client/signin/signin.component';
@@ -43,6 +44,9 @@ const routes: Routes = [
     {path:"home/category",component:CategoryComponent, children:[
       {
         path:"", component:CategoryListComponent
+      },
+      {
+        path:"categoryAdd", component: CategoryAddComponent
       }
     ]},
   ]}
