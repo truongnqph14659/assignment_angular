@@ -18,7 +18,7 @@ categories:ICategory[]=[]
   }
   RemoveCategory(id:number){
     this.categoryService.removeCat(id).subscribe(()=>{
-      this.categories =  this.categories.filter(item=> item.id !== id)
+      this.categories =  this.categories.filter(item=> item.id != id)
     })
   }
 }
