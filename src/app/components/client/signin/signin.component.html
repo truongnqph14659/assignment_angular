@@ -1,4 +1,7 @@
 <app-navbar></app-navbar>
+<ngx-spinner>
+    <!-- <div class="lds-dual-ring"></div> -->
+</ngx-spinner>
 <!-- day la giao dien signin -->
 <div class="py-4">
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 ">
@@ -9,20 +12,23 @@
                     <img src="https://picsum.photos/700/800">
                 </div>
                 <div class="w-full space-y-8 bg-white bg-opacity-50">
-                    <form class="max-w-sm space-y-6 mx-auto pt-20 " id="formSignIn">
+                    <form [formGroup]="reactiveForm" class="max-w-sm space-y-6 mx-auto pt-20 " id="formSignIn"
+                        (submit)="onSubmit()">
                         <div class="rounded-md shadow-sm -space-y-px">
                             <div class="text-center text-xl font-bold">
                                 Đăng nhập
                             </div>
                             <div>
                                 <label for="email" class="pl-1 pb-2 font-bold text-[#1a1a1a]">Địa chỉ email:</label>
-                                <input id="email" name="email" type="email" required
+                                <input id="email" name="email" type="email" [(ngModel)]="data.email"
+                                    formControlName="email"
                                     class="border border-[#ccc] block w-full pl-2 h-10 rounded-sm my-2"
                                     placeholder="Địa chỉ email">
                             </div>
                             <div>
                                 <label for="password" class="pl-1 pb-2 font-bold text-[#1a1a1a]">Mật khẩu:</label>
-                                <input id="password" name="password" type="password" required
+                                <input id="password" name="password" type="password" [(ngModel)]="data.password"
+                                    formControlName="password"
                                     class="border border-[#ccc] block w-full pl-2 h-10 rounded-sm my-2"
                                     placeholder="Mật khẩu">
                             </div>
@@ -44,7 +50,8 @@
                         </div>
                         <div>
                             <p id="checkUser" class="text-red-600 mb-5 mt-0"></p>
-                            <button class="mt-5 bg-[#111b27] text-white w-40 h-10 border-4 bg-opacity-80 border-white">
+                            <button type="submit"
+                                class="mt-5 bg-[#111b27] text-white w-40 h-10 border-4 bg-opacity-80 border-white">
                                 Đăng nhập
                             </button>
                             <div class="text-center pt-5">

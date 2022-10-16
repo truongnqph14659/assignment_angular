@@ -1,3 +1,4 @@
+import { HttpserviceService } from './../services/httpservice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private HttpClient:HttpserviceService) { }
+  data:any={
+    name:'',
+    email:'',
+    password:''
+  }
+
 
   ngOnInit(): void {
+  }
+  onSubmit(){
+    this.HttpClient.signup(this.data).subscribe((data:any)=>{
+      alert('đăng ký thành công')
+    })
   }
 
 }

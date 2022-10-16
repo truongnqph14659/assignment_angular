@@ -22,5 +22,10 @@ export class HttpserviceService {
   getProdductId(id:any):Observable<productModel>{
     return this.httpRequest.get<productModel>(`${this.API}/products/${id}`)
   }
-
+  signup(data:any):Observable<any[]>{
+    return this.httpRequest.post<any[]>(`${this.API}/signup`,data)
+  }
+  signin(data:any):Observable<any[]>{
+    return this.httpRequest.post<any[]>(`${this.API}/signin`,data)
+  }
 }

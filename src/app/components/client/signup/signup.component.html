@@ -9,35 +9,28 @@
                     <img src="https://picsum.photos/700/800">
                 </div>
                 <div class="w-full space-y-8 bg-white bg-opacity-50">
-                    <form class="max-w-sm space-y-6 mx-auto pt-10 " id="formSignUp">
+                    <form class="max-w-sm space-y-6 mx-auto pt-10 " id="formSignUp" (submit)="onSubmit()">
                         <div class="rounded-md shadow-sm -space-y-px">
                             <div class="text-center text-xl font-bold">
                                 Tạo tài khoản
                             </div>
                             <div class="">
                                 <label for="username" class="pl-1  font-bold text-[#1a1a1a]">Họ tên:</label>
-                                <input id="username" name="username" type="text" required
+                                <input id="username" name="username" type="text" [(ngModel)]="data.name"
                                     class="border border-[#ccc] block w-full pl-2 h-10 rounded-sm my-2"
                                     placeholder="Họ và tên">
                             </div>
                             <div>
                                 <label for="email" class="pl-1  font-bold text-[#1a1a1a]">Địa chỉ email:</label>
-                                <input id="email" name="email" type="email" required
+                                <input id="email" name="email" type="email" [(ngModel)]="data.email"
                                     class="border border-[#ccc] block w-full pl-2 h-10 rounded-sm my-2"
                                     placeholder="Địa chỉ email">
                             </div>
                             <div>
                                 <label for="password" class="pl-1  font-bold text-[#1a1a1a]">Mật khẩu:</label>
-                                <input id="password" name="password" type="password" required
+                                <input id="password" name="password" type="password" [(ngModel)]="data.password"
                                     class="border border-[#ccc] block w-full pl-2 h-10 rounded-sm my-2"
                                     placeholder="Mật khẩu">
-                            </div>
-                            <div>
-                                <label for="rePassword" class="pl-1  font-bold text-[#1a1a1a]">Nhập lại mật
-                                    khẩu:</label>
-                                <input id="rePassword" name="rePassword" type="password" required
-                                    class="border border-[#ccc] block w-full pl-2 h-10 rounded-sm my-2"
-                                    placeholder="Nhập lại mật khẩu">
                             </div>
                         </div>
                         <div class="hidden justify-evenly ">
@@ -47,7 +40,8 @@
 
                         <div>
                             <p id="checkUser" class="text-red-600  mt-0"></p>
-                            <button class="mt-5 bg-[#111b27] text-white w-40 h-10 border-4 bg-opacity-80 border-white">
+                            <button type="submit"
+                                class="mt-5 bg-[#111b27] text-white w-40 h-10 border-4 bg-opacity-80 border-white">
                                 Đăng ký
                             </button>
                             <div class="text-center pt-5">
