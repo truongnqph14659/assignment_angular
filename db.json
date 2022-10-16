@@ -47,6 +47,30 @@
       "price": "64000000",
       "productCateId": "16",
       "hot": "0"
+    },
+    {
+      "id": 7,
+      "name": "lê thị trang",
+      "img": "http://res.cloudinary.com/trangltph14650/image/upload/v1665931255/s7htnng3p4t3ycthtdjr.jpg",
+      "price": "",
+      "productCateId": "012",
+      "hot": ""
+    },
+    {
+      "id": 8,
+      "name": "Dell XPS 9310",
+      "img": "http://res.cloudinary.com/trangltph14650/image/upload/v1665931628/pecnhylzs8gtrgfcvikc.jpg",
+      "price": "160000",
+      "productCateId": "7",
+      "hot": ""
+    },
+    {
+      "id": 9,
+      "name": "Dell XPS 9310",
+      "img": "http://res.cloudinary.com/trangltph14650/image/upload/v1665931886/jvnwmocjjzdjnvixzplo.jpg",
+      "price": "160000",
+      "productCateId": "6",
+      "hot": ""
     }
   ],
   "productCates": [
@@ -271,13 +295,8 @@
       "id": "35"
     },
     {
+      "id": "TSc8VOF",
       "cateName": "iphone",
-      "cateType": "phone",
-      "id": "36"
-    },
-    {
-      "id": "1DHb2Iz",
-      "cateName": "djskkjsd",
       "cateType": "phone"
     }
   ],

@@ -30,19 +30,34 @@
 </div>
 <div class="flex mt-[20px] ml-[20px]">
 
-    <form (submit)="formAdd()">
+    <form (submit)="formAdd()" [formGroup]="formGroups">
 
         <div>
-            <div class="mb-3 flex">
-                <label for="exampleInputEmail1" class="form-label">Name Category</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="cateName" [(ngModel)]="category.cateName">
+            <div>
+                <div class=" flex">
+                    <label for="exampleInputEmail1" class="form-label">Name Category</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="cateName" formControlName="cateName" [(ngModel)]="category.cateName">
+                </div>
+                <div style="color: red;margin-left: 130px; margin-bottom: 10px;">
+                    <span *ngIf="formGroups.get('cateName')?.errors?.['required'] && formGroups.get('cateName')?.touched && formGroups.get('cateName')?.value ==''">
+                        Please fill out completely
+                    </span>
+                    <span *ngIf="formGroups.get('cateName')?.errors?.['minlength'] && formGroups.get('cateName')?.touched && formGroups.get('cateName')?.invalid">
+                        Please fill in all five characters
+                    </span>
+                </div>
             </div>
+
+
             <div class="flex">
                 <label for="exampleInputPassword1" class="form-label">Brand Category</label>
-                <select name="cateType" [(ngModel)]="category.cateType" class="form-select" aria-label="Default select example">
+                <select name="cateType" [(ngModel)]="category.cateType" formControlName="cateType" class="form-select" aria-label="Default select example">
                     <option  *ngFor="let item of brand" value="{{item.name}}">{{item.name}}</option>
                 </select>
             </div>
+            <span style="color: red;margin-left: 130px;" *ngIf="formGroups.get('cateType')?.touched && formGroups.get('cateType')?.invalid">
+                Please fill out completely
+            </span>
             <div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

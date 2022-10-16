@@ -24,5 +24,14 @@ export class ProductService {
   detailProduct(id: number): Observable<IProduct> {
     return this.httpClient.get<IProduct>(`${this.API}/${id}`);
   }
+  sendImage(file:any):Observable<any[]>{
+    const CLOUDINARY_NAME = "trangltph14650";
+    const CLOUDINARY_API = `https://api.cloudinary.com/v1_1/${CLOUDINARY_NAME}/image/upload`;
+    const CLOUDINARY_PRESET = "mavqbcfn";
+    const formData = new FormData()
+    formData.append("file", file)
+    formData.append("upload_preset", CLOUDINARY_PRESET)
+    return this.httpClient.post<any[]>(CLOUDINARY_API,formData)
+  }
 }
 

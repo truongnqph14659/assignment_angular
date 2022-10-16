@@ -3,7 +3,7 @@
         background-color: red;
     }
 </style>
-<form (submit)="formAdd()">
+<form (submit)="formAdd()" [formGroup]="formProduct">
     <div class="grow">
         <div class="p-3 mb-2 bg-primary text-white ">
             <p class="h3 text-center">Thêm mới sản phẩm</p>
@@ -20,28 +20,37 @@
                         <input id="input-file" type="file" class="hidden" accept="image/jpg, image/jpeg, image/png" />
                     </label>
                     <div class="mt-4">Thêm ảnh</div>
-                    <img id="preview-image" class="w-70 max-h-[100px] my-auto" name="img" [(ngModel)]="product.img" />
+                    <img class="preview" class="w-70 max-h-[100px] my-auto" name="img" />
                 </div>
             </div>
             <div class="col-span-2">
                 <div>Thông tin sản phẩm</div>
                 <div class="flex flex-col mt-4">
                     <label for="">Tên sản phẩm:</label>
-                    <input id="name" type="text" placeholder="Tên sản phẩm" class="w-full border rounded-sm h-10" name="name" [(ngModel)]="product.name">
+                    <input id="name" type="text" placeholder="Tên sản phẩm" class="w-full border rounded-sm h-10" name="name" [(ngModel)]="product.name" formControlName="name">
                 </div>
+                <span style="color: red;" *ngIf="formProduct.get('name')?.touched && formProduct.get('name')?.invalid">
+                    Please fill out completely
+                </span>
                 <div class="grid grid-cols-2 gap-4 mt-4">
                     <div class="flex flex-col">
                         <label for="">Giá:</label>
-                        <input id="originalPrice" type="text" placeholder="Giá sản phẩm" class="w-full border rounded-sm h-10" name="price" [(ngModel)]="product.price">
+                        <input id="originalPrice" type="text" placeholder="Giá sản phẩm" class="w-full border rounded-sm h-10" name="price" formControlName="price" [(ngModel)]="product.price">
                     </div>
                 </div>
+                <span style="color: red;" *ngIf="formProduct.get('price')?.touched && formProduct.get('price')?.invalid">
+                    Please fill out completely
+                </span>
 
                 <div class="w-[48%] mt-4">
                     <label for="">Danh mục:</label>
-                    <select name="productCateId" [(ngModel)]="product.productCateId" class="form-select" aria-label="Default select example">
+                    <select name="productCateId" [(ngModel)]="product.productCateId" class="form-select" aria-label="Default select example" formControlName="productCateId">
                             <option  *ngFor="let item of categories" value="{{item.id}}">{{item.cateName}}</option>
                     </select>
                 </div>
+                <span style="color: red;" *ngIf="formProduct.get('productCateId')?.touched && formProduct.get('productCateId')?.invalid">
+                    Please fill out completely
+                </span>
             </div>
 
         </div>
