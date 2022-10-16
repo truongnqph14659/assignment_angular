@@ -16,6 +16,7 @@ import { ProductListComponent } from './components/admin/product-list/product-li
 import { ProductAddComponent } from './components/admin/product-add/product-add.component'
 import { CategoryListComponent } from './components/admin/category-list/category-list.component';
 import { CategoryComponent } from './components/admin/category/category.component';
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {'path':'',component:ClientComponent,children:[
     {'path':'',component:HomepageComponent},
@@ -28,7 +29,7 @@ const routes: Routes = [
     //   'path':'brandname/:id',component:SearchpageComponent
     // }]}
   ]},
-  {'path':'admin',component:AdminComponent, children:[
+  {'path':'admin',component:AdminComponent,canActivate:[AuthGuard], children:[
     {path:"",component:HomeAdminComponent},
     {path:"home/product",component:ProductComponent, children:[
       {

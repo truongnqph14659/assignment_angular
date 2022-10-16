@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA,NgModule} from '@angular/core';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,9 @@ import { ProductEditComponent } from './components/admin/product-edit/product-ed
 import { CategoryListComponent } from './components/admin/category-list/category-list.component';
 import { CategoryComponent } from './components/admin/category/category.component';
 import { CategoryAddComponent } from './components/admin/category-add/category-add.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import {NgToastModule} from 'ng-angular-popup'
+
 
 @NgModule({
   declarations: [
@@ -60,8 +64,12 @@ import { CategoryAddComponent } from './components/admin/category-add/category-a
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgToastModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
