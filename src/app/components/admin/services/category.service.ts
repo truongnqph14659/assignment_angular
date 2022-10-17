@@ -8,10 +8,10 @@ import { ICategory } from '../model/category';
   providedIn: 'root'
 })
 export class CategoryService {
-  API=`https://apiserverassangular.vercel.app/api/productCates`
+  API=`https://bm735w-8080.preview.csb.app/api/productCates`
   constructor(private httpClient: HttpClient) { }
   getBrand():Observable<IBrand[]>{
-    return this.httpClient.get<IBrand[]>(`https://apiserverassangular.vercel.app/api/brandCate`)
+    return this.httpClient.get<IBrand[]>(`https://bm735w-8080.preview.csb.app/api/brandCate`)
   }
   getCat(): Observable<ICategory[]>{
     return this.httpClient.get<ICategory[]>(`${this.API}`)
