@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class=" w-[92%] mx-auto bg-white rounded-md my-5 px-5">
+    <div class="text-center py-2 text-3xl font-bold capitalize">
+        {{serchFor}}
+    </div>
+    <div class=" listproduct grid grid-cols-5 gap-2">
+        <div class="item rounded-md" *ngFor="let data of dataSerch">
+            <a href="/product/{{data.id}}/detail" class=" main-contain" data-s="Nomal" data-site="1" data-pro="5"
+                data-cache="False" data-name="Điện thoại Samsung Galaxy M53" data-id="247364" data-price="12490000.0"
+                data-brand="Samsung" data-cate="Điện thoại" data-box="BoxHomeV2">
+                <div class="item-label">
+                    <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                <div class="item-img">
+                    <img class=" ls-is-cached lazyloaded" alt="Samsung Galaxy M53" width="207" height="207"
+                        [src]="data.img">
+                </div>
+                <h3>{{data.name}}</h3>
+                <strong class="price">{{data.price}}₫</strong>
+                <p class="vote-txt">
+                    <b>3.9</b><i class="iconnewglobal-vote"></i>(58)
+                </p>
+            </a>
+        </div>
+    </div>
+</div>

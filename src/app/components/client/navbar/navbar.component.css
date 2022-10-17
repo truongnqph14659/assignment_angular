@@ -1,0 +1,8 @@
+.items-nav {
+  visibility: hidden;
+  opacity: 0;
+}
+.group:hover .items-nav {
+  visibility: visible;
+  opacity: 1;
+}

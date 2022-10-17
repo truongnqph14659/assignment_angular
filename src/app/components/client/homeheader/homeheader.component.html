@@ -1,0 +1,25 @@
+<div class="flex bg-[#ffd400] justify-around items-center">
+    <img class="w-[104px] rounded-lg p-2"
+        src="https://banner2.cleanpng.com/20180601/gpa/kisspng-angularjs-javascript-web-application-5b120d122f8334.8960568715279096501946.jpg"
+        alt="" />
+    <input class="h-[40px] w-[400px] focus:outline-none border-none pl-4 pr-20 rounded-md" type="text"
+        placeholder="Tìm kiếm..." />
+    <ul class="menu-header">
+        <li><a>Gọi mua hàng <br />1800.2097</a></li>
+        <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <a>Cửa hàng <br /> của bạn</a>
+        </li>
+        <li>
+            <i class="fa-solid fa-truck-fast"></i>
+            <a>Tra cứu <br /> đơn hàng</a>
+        </li>
+        <li>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <a>Giỏ hàng</a>
+        </li>
+        <li>
+            <a [routerLink]="['/signin']">Đăng nhập</a><span>/</span><a [routerLink]="['/signup']">Đăng ký</a>
+        </li>
+    </ul>
+</div>

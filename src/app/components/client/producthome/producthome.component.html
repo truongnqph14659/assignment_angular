@@ -1,0 +1,23 @@
+<div class="container  mt-[120px] px-6">
+    <h1 class="my-2 mx-1  text-lg font-bold ">SẢN PHẨM NỔI BẬT NHẤT</h1>
+    <div class="grid grid-cols-5 gap-3 listproduct">
+        <div class="item rounded-md" *ngFor="let data of dataPruducts">
+            <a [routerLink]="['product',data.id,'detail']" class=" main-contain" data-s="Nomal" data-site="1"
+                data-pro="5" data-cache="False" data-name="Điện thoại Samsung Galaxy M53" data-id="247364"
+                data-price="12490000.0" data-brand="Samsung" data-cate="Điện thoại" data-box="BoxHomeV2">
+                <div class="item-label">
+                    <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                <div class="item-img">
+                    <img class=" ls-is-cached lazyloaded" alt="Samsung Galaxy M53" width="207" height="207"
+                        [src]="data.img">
+                </div>
+                <h3>{{data.name}}</h3>
+                <strong class="price">{{data.price}}₫</strong>
+                <p class="vote-txt">
+                    <b>3.9</b><i class="iconnewglobal-vote"></i>(58)
+                </p>
+            </a>
+        </div>
+    </div>
+</div>
