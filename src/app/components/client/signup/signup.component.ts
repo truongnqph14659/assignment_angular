@@ -15,7 +15,6 @@ export class SignupComponent implements OnInit {
     password:''
   }
 
-
   ngOnInit(): void {
   }
   onSubmit(){

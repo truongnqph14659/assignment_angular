@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HttpserviceService {
-  API='https://apiserverassangular.vercel.app/api'
+  API='https://bm735w-8080.preview.csb.app/api'
   constructor(private httpRequest:HttpClient) { }
   getCategory(typeCate:string):Observable<categoryModel[]>{
     return this.httpRequest.get<categoryModel[]>(`${this.API}/productCates?cateType=${typeCate}`)
