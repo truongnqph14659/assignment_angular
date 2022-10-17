@@ -36,10 +36,16 @@ export class ProductEditComponent implements OnInit {
       })
     }
   formAdd() {
-    this.productService.editProduct(this.product).subscribe(item => {
-      console.log('thanh cong', item)
-      this.router.navigateByUrl(`admin/home/product`);
+    const input_file:any =  document.querySelector("#input-file")
+    console.log(input_file.files[0]);
+    this.productService.sendImage(input_file.files[0]).subscribe((data:any)=>{
+      this.product.img =  data.url
+      this.productService.editProduct(this.product).subscribe(item => {
+        console.log('thanh cong', item)
+        this.router.navigateByUrl(`admin/home/product`);
+      })
     })
+      
   }
 
 

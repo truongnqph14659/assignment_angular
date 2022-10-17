@@ -5,6 +5,7 @@ import { IProduct } from '../model/product';
 import { Component, OnInit, EventEmitter,Output } from '@angular/core';
 import upLoadFile from '../upLoadFile';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class ProductAddComponent implements OnInit {
    @Output() onNewEvent = new EventEmitter();
   constructor(
     private productService: ProductService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private router: Router,
     ) { }
     formProduct!:FormGroup
   product: IProduct={
@@ -35,6 +37,7 @@ export class ProductAddComponent implements OnInit {
       this.product.img =  data.url
       this.productService.addProduct(this.product).subscribe(item=>{
         console.log(item);
+        this.router.navigateByUrl(`admin/home/product`);
       })
       console.log(this.product);
       
