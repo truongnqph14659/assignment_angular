@@ -7,19 +7,20 @@ import { IProduct } from '../model/product';
   providedIn: 'root'
 })
 export class ProductService {
-  API = `https://bm735w-8080.preview.csb.app/api/products`
+  API = `https://apiserverassangular.vercel.app/api/products`
+  APIpost =`https://apiserverassangular.vercel.app/prj_46tyyXPXmaUKpBnyc7mdVZm3NHkU/api/products`
   constructor(private httpClient: HttpClient) { }
   getProduct():Observable<IProduct[]>{
     return this.httpClient.get<IProduct[]>(`${this.API}`)
   }
   removeproduct(id:any):Observable<IProduct>{
-    return this.httpClient.delete<IProduct>(`${this.API}/${id}`)
+    return this.httpClient.delete<IProduct>(`${this.APIpost}/${id}`)
   }
   addProduct(product:any):Observable<IProduct>{
-    return this.httpClient.post<IProduct>(`${this.API}`,product)
+    return this.httpClient.post<IProduct>(`${this.APIpost}`,product)
   }
   editProduct(product:any):Observable<IProduct>{
-    return this.httpClient.put<IProduct>(`${this.API}/${product.id}`,product)
+    return this.httpClient.put<IProduct>(`${this.APIpost}/${product.id}`,product)
   }
   detailProduct(id: number): Observable<IProduct> {
     return this.httpClient.get<IProduct>(`${this.API}/${id}`);
