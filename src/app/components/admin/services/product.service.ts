@@ -8,7 +8,7 @@ import { IProduct } from '../model/product';
 })
 export class ProductService {
   API = `https://apiserverassangular.vercel.app/api/products`
-  APIpost =`https://apiserverassangular.vercel.app/prj_46tyyXPXmaUKpBnyc7mdVZm3NHkU/api/products`
+  APIpost =`https://apiserverassangular.vercel.app/api/products`
   constructor(private httpClient: HttpClient) { }
   getProduct():Observable<IProduct[]>{
     return this.httpClient.get<IProduct[]>(`${this.API}`)
